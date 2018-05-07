@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "lb-newsticker-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/lbNewsticker/LbNewstickerWebPart.js",
+          "manifest": "./src/webparts/lbNewsticker/LbNewstickerWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "LbNewstickerWebPartStrings": "lib/webparts/lbNewsticker/loc/{locale}.js"
+  }
+}
