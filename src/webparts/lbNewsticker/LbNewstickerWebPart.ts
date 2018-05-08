@@ -1,3 +1,4 @@
+import pnp from "sp-pnp-js";
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
@@ -8,24 +9,25 @@ import {
 } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'LbNewstickerWebPartStrings';
-import LbNewsticker from './components/LbNewsticker';
-import { ILbNewstickerProps } from './components/ILbNewstickerProps';
+import NewsTickerContainer, { INewsTickerContainerProps } from "./components/NewsTickerContainer/NewsTickerContainer";
 
 export interface ILbNewstickerWebPartProps {
   description: string;
 }
 
-export default class LbNewstickerWebPart extends BaseClientSideWebPart<ILbNewstickerWebPartProps> {
+export default class LbNewstickerWebPart extends BaseClientSideWebPart<ILbNewstickerWebPartProps > {
 
   public render(): void {
-    const element: React.ReactElement<ILbNewstickerProps > = React.createElement(
-      LbNewsticker,
-      {
-        description: this.properties.description
-      }
-    );
 
-    ReactDom.render(element, this.domElement);
+        const element: React.ReactElement<INewsTickerContainerProps > = React.createElement(
+          NewsTickerContainer,
+          {
+            description: this.properties.description
+          }
+        );
+
+        ReactDom.render(element, this.domElement);
+    
   }
 
   protected get dataVersion(): Version {
@@ -37,14 +39,14 @@ export default class LbNewstickerWebPart extends BaseClientSideWebPart<ILbNewsti
       pages: [
         {
           header: {
-            description: strings.PropertyPaneDescription
+            description: "Redigér webdel"
           },
           groups: [
             {
-              groupName: strings.BasicGroupName,
+              groupName: "Overskrift",
               groupFields: [
                 PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                  label: "Angiv supplerende tekst til nyheden"
                 })
               ]
             }

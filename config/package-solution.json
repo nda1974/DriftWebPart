@@ -1,7 +1,7 @@
 {
   "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "lb-news-ticker-client-side-solution",
+    "name": "LBForsikring-NewsTicker",
     "id": "2bf3261c-7e5d-4b59-89f9-659941688c1c",
     "version": "1.0.0.0",
     "includeClientSideAssets": true
@@ -10,3 +10,4 @@
     "zippedPackage": "solution/lb-news-ticker.sppkg"
   }
 }
+
